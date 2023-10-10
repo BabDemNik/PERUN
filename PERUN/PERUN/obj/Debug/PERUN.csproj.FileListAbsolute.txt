@@ -1,0 +1,17 @@
+C:\Users\demya\source\repos\PERUN\PERUN\bin\Debug\PERUN.exe.config
+C:\Users\demya\source\repos\PERUN\PERUN\bin\Debug\PERUN.exe
+C:\Users\demya\source\repos\PERUN\PERUN\bin\Debug\PERUN.pdb
+C:\Users\demya\source\repos\PERUN\PERUN\obj\Debug\PERUN.csproj.AssemblyReference.cache
+C:\Users\demya\source\repos\PERUN\PERUN\obj\Debug\MainWindow.g.cs
+C:\Users\demya\source\repos\PERUN\PERUN\obj\Debug\App.g.cs
+C:\Users\demya\source\repos\PERUN\PERUN\obj\Debug\PERUN_MarkupCompile.cache
+C:\Users\demya\source\repos\PERUN\PERUN\obj\Debug\PERUN_MarkupCompile.lref
+C:\Users\demya\source\repos\PERUN\PERUN\obj\Debug\MainWindow.baml
+C:\Users\demya\source\repos\PERUN\PERUN\obj\Debug\PERUN.g.resources
+C:\Users\demya\source\repos\PERUN\PERUN\obj\Debug\PERUN.Properties.Resources.resources
+C:\Users\demya\source\repos\PERUN\PERUN\obj\Debug\PERUN.csproj.GenerateResource.cache
+C:\Users\demya\source\repos\PERUN\PERUN\obj\Debug\PERUN.csproj.CoreCompileInputs.cache
+C:\Users\demya\source\repos\PERUN\PERUN\obj\Debug\PERUN.exe
+C:\Users\demya\source\repos\PERUN\PERUN\obj\Debug\PERUN.pdb
+C:\Users\demya\source\repos\PERUN\PERUN\obj\Debug\WinApp\StandartWindow.g.cs
+C:\Users\demya\source\repos\PERUN\PERUN\obj\Debug\WinApp\StandartWindow.baml
