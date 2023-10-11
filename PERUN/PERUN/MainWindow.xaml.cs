@@ -28,9 +28,16 @@ namespace PERUN
 
         private void BTNLog_Click(object sender, RoutedEventArgs e)
         {
-            StandartWindow standartWindow = new StandartWindow();
-            standartWindow.Show();
-            this.Close();
+            if(TBLog.Text == "1" && TBPass.Text == "1")
+            {
+                StandartWindow standartWindow = new StandartWindow();
+                standartWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                LError.Content = "*Неправильный логин или пароль";
+            }
         }
     }
 }

@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PERUN.WinApp"
         mc:Ignorable="d"
-        Title="StandartWindow" Height="450" Width="800">
+        Title="StandartWindow" Height="1024" Width="1440"
+        ResizeMode="NoResize">
     <Grid>
-        <Label>misha</Label>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.RowSpan="8"
+                Background="#3A5A40"/>
+        <Border Grid.ColumnSpan="6"
+                Background="#588157"/>
+        <Image Source="\Resources\Image\Perun_logo_pion.png"
+               Height="180"
+               Margin="0 -25 0 0"/>
     </Grid>
 </Window>
