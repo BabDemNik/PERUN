@@ -33,5 +33,10 @@
         <Image Source="\Resources\Image\Perun_logo_pion.png"
                Height="180"
                Margin="0 -25 0 0"/>
+        <Label Content="Фамилия Имя"
+               FontSize="30"
+               Grid.Column="5"
+               Margin="0 30 0 0"
+               FontWeight="Bold"/>
     </Grid>
 </Window>
