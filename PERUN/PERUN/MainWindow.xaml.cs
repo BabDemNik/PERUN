@@ -1,4 +1,5 @@
-﻿using PERUN.WinApp;
+﻿using PERUN.DataBase;
+using PERUN.WinApp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace PERUN
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    {   Entitie entities = new Entitie();
         public MainWindow()
         {
             InitializeComponent();
@@ -28,7 +29,11 @@ namespace PERUN
 
         private void BTNLog_Click(object sender, RoutedEventArgs e)
         {
-            if(TBLog.Text == "1" && TBPass.Text == "1")
+            var loginPassUser = entities.User
+                .Where(i => i.Login == TBLog.Text && i.Password == TBPass.Text)
+                .ToList();
+
+            if (loginPassUser.Count > 0) 
             {
                 StandartWindow standartWindow = new StandartWindow();
                 standartWindow.Show();

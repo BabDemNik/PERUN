@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище EntitiesContainer" CdmEntityContainer="Entitie">
+    <EntitySetMapping Name="Awards">
+      <EntityTypeMapping TypeName="Entities.Awards">
+        <MappingFragment StoreEntitySet="Awards">
+          <ScalarProperty Name="IDAward" ColumnName="IDAward" />
+          <ScalarProperty Name="NameAward" ColumnName="NameAward" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DrivingLicense">
+      <EntityTypeMapping TypeName="Entities.DrivingLicense">
+        <MappingFragment StoreEntitySet="DrivingLicense">
+          <ScalarProperty Name="IDDrivingLicense" ColumnName="IDDrivingLicense" />
+          <ScalarProperty Name="NameCategory" ColumnName="NameCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Education">
+      <EntityTypeMapping TypeName="Entities.Education">
+        <MappingFragment StoreEntitySet="Education">
+          <ScalarProperty Name="IDEducation" ColumnName="IDEducation" />
+          <ScalarProperty Name="EducationLevel" ColumnName="EducationLevel" />
+          <ScalarProperty Name="Profesion" ColumnName="Profesion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gender">
+      <EntityTypeMapping TypeName="Entities.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="IDGender" ColumnName="IDGender" />
+          <ScalarProperty Name="NameGender" ColumnName="NameGender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Military">
+      <EntityTypeMapping TypeName="Entities.Military">
+        <MappingFragment StoreEntitySet="Military">
+          <ScalarProperty Name="IDMilitary" ColumnName="IDMilitary" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastNAme" ColumnName="LastNAme" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="IDGender" ColumnName="IDGender" />
+          <ScalarProperty Name="IDMilitaryUnit" ColumnName="IDMilitaryUnit" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="IDStatusOfAServiceman" ColumnName="IDStatusOfAServiceman" />
+          <ScalarProperty Name="IDRank" ColumnName="IDRank" />
+          <ScalarProperty Name="PlaceOfWork" ColumnName="PlaceOfWork" />
+          <ScalarProperty Name="Passport" ColumnName="Passport" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MilitaryUnit">
+      <EntityTypeMapping TypeName="Entities.MilitaryUnit">
+        <MappingFragment StoreEntitySet="MilitaryUnit">
+          <ScalarProperty Name="IDMilitaryUnit" ColumnName="IDMilitaryUnit" />
+          <ScalarProperty Name="MilitaryNumber" ColumnName="MilitaryNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rank">
+      <EntityTypeMapping TypeName="Entities.Rank">
+        <MappingFragment StoreEntitySet="Rank">
+          <ScalarProperty Name="IDRank" ColumnName="IDRank" />
+          <ScalarProperty Name="NameRank" ColumnName="NameRank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills">
+      <EntityTypeMapping TypeName="Entities.Skills">
+        <MappingFragment StoreEntitySet="Skills">
+          <ScalarProperty Name="IDSkills" ColumnName="IDSkills" />
+          <ScalarProperty Name="NameSkill" ColumnName="NameSkill" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SportsCategory">
+      <EntityTypeMapping TypeName="Entities.SportsCategory">
+        <MappingFragment StoreEntitySet="SportsCategory">
+          <ScalarProperty Name="IDSportCategory" ColumnName="IDSportCategory" />
+          <ScalarProperty Name="NameSport" ColumnName="NameSport" />
+          <ScalarProperty Name="SportCategory" ColumnName="SportCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusOfServiceman">
+      <EntityTypeMapping TypeName="Entities.StatusOfServiceman">
+        <MappingFragment StoreEntitySet="StatusOfServiceman">
+          <ScalarProperty Name="IDStatusServiceman" ColumnName="IDStatusServiceman" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Entities.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="Entities.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Passport" ColumnName="Passport" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="MilitaryAwards" TypeName="Entities.MilitaryAwards" StoreEntitySet="MilitaryAwards">
+      <EndProperty Name="Awards">
+        <ScalarProperty Name="IDAward" ColumnName="IDAwards" />
+      </EndProperty>
+      <EndProperty Name="Military">
+        <ScalarProperty Name="IDMilitary" ColumnName="IDMilitary" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MilitaryDrivingLicense" TypeName="Entities.MilitaryDrivingLicense" StoreEntitySet="MilitaryDrivingLicense">
+      <EndProperty Name="DrivingLicense">
+        <ScalarProperty Name="IDDrivingLicense" ColumnName="IDDrivingLicense" />
+      </EndProperty>
+      <EndProperty Name="Military">
+        <ScalarProperty Name="IDMilitary" ColumnName="IDMilitary" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MilitaryEducation" TypeName="Entities.MilitaryEducation" StoreEntitySet="MilitaryEducation">
+      <EndProperty Name="Education">
+        <ScalarProperty Name="IDEducation" ColumnName="IDEducation" />
+      </EndProperty>
+      <EndProperty Name="Military">
+        <ScalarProperty Name="IDMilitary" ColumnName="IDMilitary" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MilitarySkills" TypeName="Entities.MilitarySkills" StoreEntitySet="MilitarySkills">
+      <EndProperty Name="Military">
+        <ScalarProperty Name="IDMilitary" ColumnName="IDMilitary" />
+      </EndProperty>
+      <EndProperty Name="Skills">
+        <ScalarProperty Name="IDSkills" ColumnName="IDSkills" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MilitarySportsCategory" TypeName="Entities.MilitarySportsCategory" StoreEntitySet="MilitarySportsCategory">
+      <EndProperty Name="Military">
+        <ScalarProperty Name="IDMilitary" ColumnName="IDMilitary" />
+      </EndProperty>
+      <EndProperty Name="SportsCategory">
+        <ScalarProperty Name="IDSportCategory" ColumnName="IDSportsCategory" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище Entities.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище Entities.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище Entities.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище Entities.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Entities.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище Entities.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Entities.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище Entities.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище Entities.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

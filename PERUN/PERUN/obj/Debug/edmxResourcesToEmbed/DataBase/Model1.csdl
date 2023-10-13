@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Entities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Awards">
+    <Key>
+      <PropertyRef Name="IDAward" />
+    </Key>
+    <Property Name="IDAward" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameAward" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Military" Relationship="Self.MilitaryAwards" FromRole="Awards" ToRole="Military" />
+  </EntityType>
+  <EntityType Name="DrivingLicense">
+    <Key>
+      <PropertyRef Name="IDDrivingLicense" />
+    </Key>
+    <Property Name="IDDrivingLicense" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameCategory" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Military" Relationship="Self.MilitaryDrivingLicense" FromRole="DrivingLicense" ToRole="Military" />
+  </EntityType>
+  <EntityType Name="Education">
+    <Key>
+      <PropertyRef Name="IDEducation" />
+    </Key>
+    <Property Name="IDEducation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EducationLevel" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Profesion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Military" Relationship="Self.MilitaryEducation" FromRole="Education" ToRole="Military" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="IDGender" />
+    </Key>
+    <Property Name="IDGender" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameGender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Military" Relationship="Self.FK_Military_Gender" FromRole="Gender" ToRole="Military" />
+  </EntityType>
+  <EntityType Name="Military">
+    <Key>
+      <PropertyRef Name="IDMilitary" />
+    </Key>
+    <Property Name="IDMilitary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastNAme" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patronymic" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="Height" Type="Int32" Nullable="false" />
+    <Property Name="IDGender" Type="Int32" Nullable="false" />
+    <Property Name="IDMilitaryUnit" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="244" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IDStatusOfAServiceman" Type="Int32" Nullable="false" />
+    <Property Name="IDRank" Type="Int32" />
+    <Property Name="PlaceOfWork" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Passport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Photo" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Gender" Relationship="Self.FK_Military_Gender" FromRole="Military" ToRole="Gender" />
+    <NavigationProperty Name="MilitaryUnit" Relationship="Self.FK_Military_MilitaryUnit" FromRole="Military" ToRole="MilitaryUnit" />
+    <NavigationProperty Name="Rank" Relationship="Self.FK_Military_Rank" FromRole="Military" ToRole="Rank" />
+    <NavigationProperty Name="StatusOfServiceman" Relationship="Self.FK_Military_StatusOfServiceman" FromRole="Military" ToRole="StatusOfServiceman" />
+    <NavigationProperty Name="Awards" Relationship="Self.MilitaryAwards" FromRole="Military" ToRole="Awards" />
+    <NavigationProperty Name="DrivingLicense" Relationship="Self.MilitaryDrivingLicense" FromRole="Military" ToRole="DrivingLicense" />
+    <NavigationProperty Name="Education" Relationship="Self.MilitaryEducation" FromRole="Military" ToRole="Education" />
+    <NavigationProperty Name="Skills" Relationship="Self.MilitarySkills" FromRole="Military" ToRole="Skills" />
+    <NavigationProperty Name="SportsCategory" Relationship="Self.MilitarySportsCategory" FromRole="Military" ToRole="SportsCategory" />
+  </EntityType>
+  <EntityType Name="MilitaryUnit">
+    <Key>
+      <PropertyRef Name="IDMilitaryUnit" />
+    </Key>
+    <Property Name="IDMilitaryUnit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MilitaryNumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Military" Relationship="Self.FK_Military_MilitaryUnit" FromRole="MilitaryUnit" ToRole="Military" />
+  </EntityType>
+  <EntityType Name="Rank">
+    <Key>
+      <PropertyRef Name="IDRank" />
+    </Key>
+    <Property Name="IDRank" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameRank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Military" Relationship="Self.FK_Military_Rank" FromRole="Rank" ToRole="Military" />
+  </EntityType>
+  <EntityType Name="Skills">
+    <Key>
+      <PropertyRef Name="IDSkills" />
+    </Key>
+    <Property Name="IDSkills" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameSkill" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Military" Relationship="Self.MilitarySkills" FromRole="Skills" ToRole="Military" />
+  </EntityType>
+  <EntityType Name="SportsCategory">
+    <Key>
+      <PropertyRef Name="IDSportCategory" />
+    </Key>
+    <Property Name="IDSportCategory" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NameSport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SportCategory" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Military" Relationship="Self.MilitarySportsCategory" FromRole="SportsCategory" ToRole="Military" />
+  </EntityType>
+  <EntityType Name="StatusOfServiceman">
+    <Key>
+      <PropertyRef Name="IDStatusServiceman" />
+    </Key>
+    <Property Name="IDStatusServiceman" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Military" Relationship="Self.FK_Military_StatusOfServiceman" FromRole="StatusOfServiceman" ToRole="Military" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="IDUser" />
+    </Key>
+    <Property Name="IDUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Passport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Military_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Military" Type="Self.Military" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="IDGender" />
+      </Principal>
+      <Dependent Role="Military">
+        <PropertyRef Name="IDGender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Military_MilitaryUnit">
+    <End Role="MilitaryUnit" Type="Self.MilitaryUnit" Multiplicity="0..1" />
+    <End Role="Military" Type="Self.Military" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MilitaryUnit">
+        <PropertyRef Name="IDMilitaryUnit" />
+      </Principal>
+      <Dependent Role="Military">
+        <PropertyRef Name="IDMilitaryUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Military_Rank">
+    <End Role="Rank" Type="Self.Rank" Multiplicity="0..1" />
+    <End Role="Military" Type="Self.Military" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rank">
+        <PropertyRef Name="IDRank" />
+      </Principal>
+      <Dependent Role="Military">
+        <PropertyRef Name="IDRank" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Military_StatusOfServiceman">
+    <End Role="StatusOfServiceman" Type="Self.StatusOfServiceman" Multiplicity="1" />
+    <End Role="Military" Type="Self.Military" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusOfServiceman">
+        <PropertyRef Name="IDStatusServiceman" />
+      </Principal>
+      <Dependent Role="Military">
+        <PropertyRef Name="IDStatusOfAServiceman" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MilitaryAwards">
+    <End Role="Awards" Type="Self.Awards" Multiplicity="*" />
+    <End Role="Military" Type="Self.Military" Multiplicity="*" />
+  </Association>
+  <Association Name="MilitaryDrivingLicense">
+    <End Role="DrivingLicense" Type="Self.DrivingLicense" Multiplicity="*" />
+    <End Role="Military" Type="Self.Military" Multiplicity="*" />
+  </Association>
+  <Association Name="MilitaryEducation">
+    <End Role="Education" Type="Self.Education" Multiplicity="*" />
+    <End Role="Military" Type="Self.Military" Multiplicity="*" />
+  </Association>
+  <Association Name="MilitarySkills">
+    <End Role="Military" Type="Self.Military" Multiplicity="*" />
+    <End Role="Skills" Type="Self.Skills" Multiplicity="*" />
+  </Association>
+  <Association Name="MilitarySportsCategory">
+    <End Role="Military" Type="Self.Military" Multiplicity="*" />
+    <End Role="SportsCategory" Type="Self.SportsCategory" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Entitie" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Awards" EntityType="Self.Awards" />
+    <EntitySet Name="DrivingLicense" EntityType="Self.DrivingLicense" />
+    <EntitySet Name="Education" EntityType="Self.Education" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" />
+    <EntitySet Name="Military" EntityType="Self.Military" />
+    <EntitySet Name="MilitaryUnit" EntityType="Self.MilitaryUnit" />
+    <EntitySet Name="Rank" EntityType="Self.Rank" />
+    <EntitySet Name="Skills" EntityType="Self.Skills" />
+    <EntitySet Name="SportsCategory" EntityType="Self.SportsCategory" />
+    <EntitySet Name="StatusOfServiceman" EntityType="Self.StatusOfServiceman" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <AssociationSet Name="FK_Military_Gender" Association="Self.FK_Military_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Military" EntitySet="Military" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Military_MilitaryUnit" Association="Self.FK_Military_MilitaryUnit">
+      <End Role="MilitaryUnit" EntitySet="MilitaryUnit" />
+      <End Role="Military" EntitySet="Military" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Military_Rank" Association="Self.FK_Military_Rank">
+      <End Role="Rank" EntitySet="Rank" />
+      <End Role="Military" EntitySet="Military" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Military_StatusOfServiceman" Association="Self.FK_Military_StatusOfServiceman">
+      <End Role="StatusOfServiceman" EntitySet="StatusOfServiceman" />
+      <End Role="Military" EntitySet="Military" />
+    </AssociationSet>
+    <AssociationSet Name="MilitaryAwards" Association="Self.MilitaryAwards">
+      <End Role="Awards" EntitySet="Awards" />
+      <End Role="Military" EntitySet="Military" />
+    </AssociationSet>
+    <AssociationSet Name="MilitaryDrivingLicense" Association="Self.MilitaryDrivingLicense">
+      <End Role="DrivingLicense" EntitySet="DrivingLicense" />
+      <End Role="Military" EntitySet="Military" />
+    </AssociationSet>
+    <AssociationSet Name="MilitaryEducation" Association="Self.MilitaryEducation">
+      <End Role="Education" EntitySet="Education" />
+      <End Role="Military" EntitySet="Military" />
+    </AssociationSet>
+    <AssociationSet Name="MilitarySkills" Association="Self.MilitarySkills">
+      <End Role="Military" EntitySet="Military" />
+      <End Role="Skills" EntitySet="Skills" />
+    </AssociationSet>
+    <AssociationSet Name="MilitarySportsCategory" Association="Self.MilitarySportsCategory">
+      <End Role="Military" EntitySet="Military" />
+      <End Role="SportsCategory" EntitySet="SportsCategory" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Entities.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Entities.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>
