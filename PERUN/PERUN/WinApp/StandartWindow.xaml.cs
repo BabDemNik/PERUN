@@ -18,10 +18,36 @@ namespace PERUN.WinApp
     /// Логика взаимодействия для StandartWindow.xaml
     /// </summary>
     public partial class StandartWindow : Window
+
     {
+        private string userName; 
+        public StandartWindow(string nameUSer)
+        {
+            InitializeComponent();
+            userName = nameUSer;
+            LNameUser.Content = userName;
+        }
+
         public StandartWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            LNameUser.Content = "Ghtrgt";
+        }
+
+        private void BTNExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BTNAddMilitary_Click(object sender, RoutedEventArgs e)
+        {
+            WinAddMillitary winAddMillitary = new WinAddMillitary();
+            winAddMillitary.InitializeComponent();
+            winAddMillitary.Show();
         }
     }
 }

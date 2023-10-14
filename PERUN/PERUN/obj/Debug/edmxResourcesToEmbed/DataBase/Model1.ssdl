@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Хранилище Entities" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="Хранилище BabDemNikModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Awards">
     <Key>
       <PropertyRef Name="IDAward" />
@@ -22,7 +22,7 @@
     <Property Name="EducationLevel" Type="nvarchar" MaxLength="10" Nullable="false" />
     <Property Name="Profesion" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <EntityType Name="Gender">
+  <EntityType Name="Gend">
     <Key>
       <PropertyRef Name="IDGender" />
     </Key>
@@ -41,11 +41,11 @@
     <Property Name="Height" Type="int" Nullable="false" />
     <Property Name="IDGender" Type="int" Nullable="false" />
     <Property Name="IDMilitaryUnit" Type="int" />
-    <Property Name="Address" Type="nvarchar" MaxLength="244" Nullable="false" />
-    <Property Name="IDStatusOfAServiceman" Type="int" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="244" />
+    <Property Name="IDStatusOfAServiceman" Type="int" />
     <Property Name="IDRank" Type="int" />
     <Property Name="PlaceOfWork" Type="nvarchar" MaxLength="50" />
-    <Property Name="Passport" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Passport" Type="nvarchar" MaxLength="50" />
     <Property Name="Photo" Type="nvarchar" MaxLength="1024" />
   </EntityType>
   <EntityType Name="MilitaryAwards">
@@ -151,10 +151,10 @@
     <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <Association Name="FK_Military_Gender">
-    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Gend" Type="Self.Gend" Multiplicity="1" />
     <End Role="Military" Type="Self.Military" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Gender">
+      <Principal Role="Gend">
         <PropertyRef Name="IDGender" />
       </Principal>
       <Dependent Role="Military">
@@ -187,7 +187,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Military_StatusOfServiceman">
-    <End Role="StatusOfServiceman" Type="Self.StatusOfServiceman" Multiplicity="1" />
+    <End Role="StatusOfServiceman" Type="Self.StatusOfServiceman" Multiplicity="0..1" />
     <End Role="Military" Type="Self.Military" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="StatusOfServiceman">
@@ -349,11 +349,11 @@
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <EntityContainer Name="Хранилище EntitiesContainer">
+  <EntityContainer Name="Хранилище BabDemNikModelContainer">
     <EntitySet Name="Awards" EntityType="Self.Awards" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DrivingLicense" EntityType="Self.DrivingLicense" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gend" EntityType="Self.Gend" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Military" EntityType="Self.Military" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MilitaryAwards" EntityType="Self.MilitaryAwards" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MilitaryDrivingLicense" EntityType="Self.MilitaryDrivingLicense" Schema="dbo" store:Type="Tables" />
@@ -368,7 +368,7 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Military_Gender" Association="Self.FK_Military_Gender">
-      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Gend" EntitySet="Gend" />
       <End Role="Military" EntitySet="Military" />
     </AssociationSet>
     <AssociationSet Name="FK_Military_MilitaryUnit" Association="Self.FK_Military_MilitaryUnit">

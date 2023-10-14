@@ -12,10 +12,10 @@ namespace PERUN.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Gender
+    public partial class Gend
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Gender()
+        public Gend()
         {
             this.Military = new HashSet<Military>();
         }

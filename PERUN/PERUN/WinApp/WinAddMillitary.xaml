@@ -1,0 +1,95 @@
+﻿<Window x:Class="PERUN.WinApp.WinAddMillitary"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PERUN.WinApp"
+        mc:Ignorable="d"
+        Title="WinAddMillitary" Height="3999" Width="814"
+        ResizeMode="NoResize">
+    <Grid>
+        <Border Background="#3A5A40"
+                Height="50"
+                VerticalAlignment="Top"/>
+        <ScrollViewer>
+
+            <StackPanel HorizontalAlignment="Center">
+
+                <TextBlock Text="ФОТО"
+                       Margin="0 70 0 0" 
+                       FontSize="30"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"/>
+
+                <Image x:Name="Photo"
+                       Source="\Resources\Image\Exit.png"
+                       Height="200"
+                       Width="260"/>
+                    
+                
+                <Button x:Name="BTNAddPhoto"
+                        Content="Добавить фото"
+                        FontSize="30"
+                        Margin="0 15 0 0" 
+                        Click="BTNAddPhoto_Click"/>
+
+                <Label Name="LUrlPhoto"
+                       FontSize="1"
+                       Foreground="White"
+                       Height="1"/>
+                
+                <TextBlock Text="ФИО"
+                        Margin="0 30 0 0" 
+                        FontSize="30"
+                        FontWeight="Bold"
+                        HorizontalAlignment="Center"/>
+                
+                <TextBox x:Name="TBName"
+                    Height="40"
+                    Background="LightGray"
+                    FontSize="30"/>
+
+                <TextBlock Text="Возраст"
+                        Margin="0 30 0 0" 
+                        FontSize="30"
+                        FontWeight="Bold"
+                        HorizontalAlignment="Center"/>
+
+                <TextBox x:Name="TBAge"
+                    Height="40"
+                    Background="LightGray"
+                    FontSize="30"/>
+
+                <TextBlock Text="Рост"
+                        Margin="0 30 0 0" 
+                        FontSize="30"
+                        FontWeight="Bold"
+                        HorizontalAlignment="Center"/>
+
+                <TextBox x:Name="TBHeight"
+                    Height="40"
+                    Background="LightGray"
+                    FontSize="30"/>
+
+                <TextBlock Text="Пол"
+                        Margin="0 30 0 0" 
+                        FontSize="30"
+                        FontWeight="Bold"
+                        HorizontalAlignment="Center"/>
+                <ComboBox Name="CBGender"
+                    FontSize="30"/>
+
+                <Button x:Name="BTNAdd"
+                     Content="Добавить фото"
+                     FontSize="30"
+                     Margin="0 15 0 0" Click="BTNAdd_Click" 
+                     />
+
+
+
+
+            </StackPanel>
+            
+        </ScrollViewer>
+    </Grid>
+</Window>

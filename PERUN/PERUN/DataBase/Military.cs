@@ -33,13 +33,13 @@ namespace PERUN.DataBase
         public int IDGender { get; set; }
         public Nullable<int> IDMilitaryUnit { get; set; }
         public string Address { get; set; }
-        public int IDStatusOfAServiceman { get; set; }
+        public Nullable<int> IDStatusOfAServiceman { get; set; }
         public Nullable<int> IDRank { get; set; }
         public string PlaceOfWork { get; set; }
         public string Passport { get; set; }
         public string Photo { get; set; }
     
-        public virtual Gender Gender { get; set; }
+        public virtual Gend Gend { get; set; }
         public virtual MilitaryUnit MilitaryUnit { get; set; }
         public virtual Rank Rank { get; set; }
         public virtual StatusOfServiceman StatusOfServiceman { get; set; }

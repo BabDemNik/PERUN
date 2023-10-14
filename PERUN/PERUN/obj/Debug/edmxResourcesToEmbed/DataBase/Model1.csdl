@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Entities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="BabDemNikModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Awards">
     <Key>
       <PropertyRef Name="IDAward" />
@@ -25,13 +25,13 @@
     <Property Name="Profesion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Military" Relationship="Self.MilitaryEducation" FromRole="Education" ToRole="Military" />
   </EntityType>
-  <EntityType Name="Gender">
+  <EntityType Name="Gend">
     <Key>
       <PropertyRef Name="IDGender" />
     </Key>
     <Property Name="IDGender" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NameGender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Military" Relationship="Self.FK_Military_Gender" FromRole="Gender" ToRole="Military" />
+    <NavigationProperty Name="Military" Relationship="Self.FK_Military_Gender" FromRole="Gend" ToRole="Military" />
   </EntityType>
   <EntityType Name="Military">
     <Key>
@@ -45,13 +45,13 @@
     <Property Name="Height" Type="Int32" Nullable="false" />
     <Property Name="IDGender" Type="Int32" Nullable="false" />
     <Property Name="IDMilitaryUnit" Type="Int32" />
-    <Property Name="Address" Type="String" MaxLength="244" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="IDStatusOfAServiceman" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="244" FixedLength="false" Unicode="true" />
+    <Property Name="IDStatusOfAServiceman" Type="Int32" />
     <Property Name="IDRank" Type="Int32" />
     <Property Name="PlaceOfWork" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Passport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Passport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Photo" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Gender" Relationship="Self.FK_Military_Gender" FromRole="Military" ToRole="Gender" />
+    <NavigationProperty Name="Gend" Relationship="Self.FK_Military_Gender" FromRole="Military" ToRole="Gend" />
     <NavigationProperty Name="MilitaryUnit" Relationship="Self.FK_Military_MilitaryUnit" FromRole="Military" ToRole="MilitaryUnit" />
     <NavigationProperty Name="Rank" Relationship="Self.FK_Military_Rank" FromRole="Military" ToRole="Rank" />
     <NavigationProperty Name="StatusOfServiceman" Relationship="Self.FK_Military_StatusOfServiceman" FromRole="Military" ToRole="StatusOfServiceman" />
@@ -129,10 +129,10 @@
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
   <Association Name="FK_Military_Gender">
-    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Gend" Type="Self.Gend" Multiplicity="1" />
     <End Role="Military" Type="Self.Military" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Gender">
+      <Principal Role="Gend">
         <PropertyRef Name="IDGender" />
       </Principal>
       <Dependent Role="Military">
@@ -165,7 +165,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Military_StatusOfServiceman">
-    <End Role="StatusOfServiceman" Type="Self.StatusOfServiceman" Multiplicity="1" />
+    <End Role="StatusOfServiceman" Type="Self.StatusOfServiceman" Multiplicity="0..1" />
     <End Role="Military" Type="Self.Military" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="StatusOfServiceman">
@@ -196,11 +196,11 @@
     <End Role="Military" Type="Self.Military" Multiplicity="*" />
     <End Role="SportsCategory" Type="Self.SportsCategory" Multiplicity="*" />
   </Association>
-  <EntityContainer Name="Entitie" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Entiti" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Awards" EntityType="Self.Awards" />
     <EntitySet Name="DrivingLicense" EntityType="Self.DrivingLicense" />
     <EntitySet Name="Education" EntityType="Self.Education" />
-    <EntitySet Name="Gender" EntityType="Self.Gender" />
+    <EntitySet Name="Gend" EntityType="Self.Gend" />
     <EntitySet Name="Military" EntityType="Self.Military" />
     <EntitySet Name="MilitaryUnit" EntityType="Self.MilitaryUnit" />
     <EntitySet Name="Rank" EntityType="Self.Rank" />
@@ -210,7 +210,7 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="User" EntityType="Self.User" />
     <AssociationSet Name="FK_Military_Gender" Association="Self.FK_Military_Gender">
-      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Gend" EntitySet="Gend" />
       <End Role="Military" EntitySet="Military" />
     </AssociationSet>
     <AssociationSet Name="FK_Military_MilitaryUnit" Association="Self.FK_Military_MilitaryUnit">
@@ -261,11 +261,11 @@
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Entities.sp_helpdiagramdefinition_Result)">
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(BabDemNikModel.sp_helpdiagramdefinition_Result)">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Entities.sp_helpdiagrams_Result)">
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(BabDemNikModel.sp_helpdiagrams_Result)">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
     </FunctionImport>

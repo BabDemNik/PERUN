@@ -73,7 +73,7 @@
     <Compile Include="DataBase\Education.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataBase\Gender.cs">
+    <Compile Include="DataBase\Gend.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Military.cs">
@@ -124,6 +124,9 @@
     <Compile Include="WinApp\StandartWindow.xaml.cs">
       <DependentUpon>StandartWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinApp\WinAddMillitary.xaml.cs">
+      <DependentUpon>WinAddMillitary.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -137,6 +140,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="WinApp\StandartWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinApp\WinAddMillitary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,6 +190,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Exit.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\Model1.Context.tt">

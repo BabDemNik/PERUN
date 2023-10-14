@@ -15,10 +15,10 @@ namespace PERUN.DataBase
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class Entitie : DbContext
+    public partial class Entiti : DbContext
     {
-        public Entitie()
-            : base("name=Entitie")
+        public Entiti()
+            : base("name=Entiti")
         {
         }
     
@@ -30,7 +30,7 @@ namespace PERUN.DataBase
         public virtual DbSet<Awards> Awards { get; set; }
         public virtual DbSet<DrivingLicense> DrivingLicense { get; set; }
         public virtual DbSet<Education> Education { get; set; }
-        public virtual DbSet<Gender> Gender { get; set; }
+        public virtual DbSet<Gend> Gend { get; set; }
         public virtual DbSet<Military> Military { get; set; }
         public virtual DbSet<MilitaryUnit> MilitaryUnit { get; set; }
         public virtual DbSet<Rank> Rank { get; set; }

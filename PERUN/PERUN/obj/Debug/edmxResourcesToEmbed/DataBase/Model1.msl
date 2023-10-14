@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище EntitiesContainer" CdmEntityContainer="Entitie">
+  <EntityContainerMapping StorageEntityContainer="Хранилище BabDemNikModelContainer" CdmEntityContainer="Entiti">
     <EntitySetMapping Name="Awards">
-      <EntityTypeMapping TypeName="Entities.Awards">
+      <EntityTypeMapping TypeName="BabDemNikModel.Awards">
         <MappingFragment StoreEntitySet="Awards">
           <ScalarProperty Name="IDAward" ColumnName="IDAward" />
           <ScalarProperty Name="NameAward" ColumnName="NameAward" />
@@ -10,7 +10,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DrivingLicense">
-      <EntityTypeMapping TypeName="Entities.DrivingLicense">
+      <EntityTypeMapping TypeName="BabDemNikModel.DrivingLicense">
         <MappingFragment StoreEntitySet="DrivingLicense">
           <ScalarProperty Name="IDDrivingLicense" ColumnName="IDDrivingLicense" />
           <ScalarProperty Name="NameCategory" ColumnName="NameCategory" />
@@ -18,7 +18,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Education">
-      <EntityTypeMapping TypeName="Entities.Education">
+      <EntityTypeMapping TypeName="BabDemNikModel.Education">
         <MappingFragment StoreEntitySet="Education">
           <ScalarProperty Name="IDEducation" ColumnName="IDEducation" />
           <ScalarProperty Name="EducationLevel" ColumnName="EducationLevel" />
@@ -26,16 +26,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Gender">
-      <EntityTypeMapping TypeName="Entities.Gender">
-        <MappingFragment StoreEntitySet="Gender">
+    <EntitySetMapping Name="Gend">
+      <EntityTypeMapping TypeName="BabDemNikModel.Gend">
+        <MappingFragment StoreEntitySet="Gend">
           <ScalarProperty Name="IDGender" ColumnName="IDGender" />
           <ScalarProperty Name="NameGender" ColumnName="NameGender" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Military">
-      <EntityTypeMapping TypeName="Entities.Military">
+      <EntityTypeMapping TypeName="BabDemNikModel.Military">
         <MappingFragment StoreEntitySet="Military">
           <ScalarProperty Name="IDMilitary" ColumnName="IDMilitary" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -55,7 +55,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="MilitaryUnit">
-      <EntityTypeMapping TypeName="Entities.MilitaryUnit">
+      <EntityTypeMapping TypeName="BabDemNikModel.MilitaryUnit">
         <MappingFragment StoreEntitySet="MilitaryUnit">
           <ScalarProperty Name="IDMilitaryUnit" ColumnName="IDMilitaryUnit" />
           <ScalarProperty Name="MilitaryNumber" ColumnName="MilitaryNumber" />
@@ -63,7 +63,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Rank">
-      <EntityTypeMapping TypeName="Entities.Rank">
+      <EntityTypeMapping TypeName="BabDemNikModel.Rank">
         <MappingFragment StoreEntitySet="Rank">
           <ScalarProperty Name="IDRank" ColumnName="IDRank" />
           <ScalarProperty Name="NameRank" ColumnName="NameRank" />
@@ -71,7 +71,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Skills">
-      <EntityTypeMapping TypeName="Entities.Skills">
+      <EntityTypeMapping TypeName="BabDemNikModel.Skills">
         <MappingFragment StoreEntitySet="Skills">
           <ScalarProperty Name="IDSkills" ColumnName="IDSkills" />
           <ScalarProperty Name="NameSkill" ColumnName="NameSkill" />
@@ -79,7 +79,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="SportsCategory">
-      <EntityTypeMapping TypeName="Entities.SportsCategory">
+      <EntityTypeMapping TypeName="BabDemNikModel.SportsCategory">
         <MappingFragment StoreEntitySet="SportsCategory">
           <ScalarProperty Name="IDSportCategory" ColumnName="IDSportCategory" />
           <ScalarProperty Name="NameSport" ColumnName="NameSport" />
@@ -88,7 +88,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="StatusOfServiceman">
-      <EntityTypeMapping TypeName="Entities.StatusOfServiceman">
+      <EntityTypeMapping TypeName="BabDemNikModel.StatusOfServiceman">
         <MappingFragment StoreEntitySet="StatusOfServiceman">
           <ScalarProperty Name="IDStatusServiceman" ColumnName="IDStatusServiceman" />
           <ScalarProperty Name="Status" ColumnName="Status" />
@@ -96,7 +96,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="Entities.sysdiagrams">
+      <EntityTypeMapping TypeName="BabDemNikModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -107,7 +107,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="User">
-      <EntityTypeMapping TypeName="Entities.User">
+      <EntityTypeMapping TypeName="BabDemNikModel.User">
         <MappingFragment StoreEntitySet="User">
           <ScalarProperty Name="IDUser" ColumnName="IDUser" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -123,7 +123,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="MilitaryAwards" TypeName="Entities.MilitaryAwards" StoreEntitySet="MilitaryAwards">
+    <AssociationSetMapping Name="MilitaryAwards" TypeName="BabDemNikModel.MilitaryAwards" StoreEntitySet="MilitaryAwards">
       <EndProperty Name="Awards">
         <ScalarProperty Name="IDAward" ColumnName="IDAwards" />
       </EndProperty>
@@ -131,7 +131,7 @@
         <ScalarProperty Name="IDMilitary" ColumnName="IDMilitary" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="MilitaryDrivingLicense" TypeName="Entities.MilitaryDrivingLicense" StoreEntitySet="MilitaryDrivingLicense">
+    <AssociationSetMapping Name="MilitaryDrivingLicense" TypeName="BabDemNikModel.MilitaryDrivingLicense" StoreEntitySet="MilitaryDrivingLicense">
       <EndProperty Name="DrivingLicense">
         <ScalarProperty Name="IDDrivingLicense" ColumnName="IDDrivingLicense" />
       </EndProperty>
@@ -139,7 +139,7 @@
         <ScalarProperty Name="IDMilitary" ColumnName="IDMilitary" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="MilitaryEducation" TypeName="Entities.MilitaryEducation" StoreEntitySet="MilitaryEducation">
+    <AssociationSetMapping Name="MilitaryEducation" TypeName="BabDemNikModel.MilitaryEducation" StoreEntitySet="MilitaryEducation">
       <EndProperty Name="Education">
         <ScalarProperty Name="IDEducation" ColumnName="IDEducation" />
       </EndProperty>
@@ -147,7 +147,7 @@
         <ScalarProperty Name="IDMilitary" ColumnName="IDMilitary" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="MilitarySkills" TypeName="Entities.MilitarySkills" StoreEntitySet="MilitarySkills">
+    <AssociationSetMapping Name="MilitarySkills" TypeName="BabDemNikModel.MilitarySkills" StoreEntitySet="MilitarySkills">
       <EndProperty Name="Military">
         <ScalarProperty Name="IDMilitary" ColumnName="IDMilitary" />
       </EndProperty>
@@ -155,7 +155,7 @@
         <ScalarProperty Name="IDSkills" ColumnName="IDSkills" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="MilitarySportsCategory" TypeName="Entities.MilitarySportsCategory" StoreEntitySet="MilitarySportsCategory">
+    <AssociationSetMapping Name="MilitarySportsCategory" TypeName="BabDemNikModel.MilitarySportsCategory" StoreEntitySet="MilitarySportsCategory">
       <EndProperty Name="Military">
         <ScalarProperty Name="IDMilitary" ColumnName="IDMilitary" />
       </EndProperty>
@@ -163,20 +163,20 @@
         <ScalarProperty Name="IDSportCategory" ColumnName="IDSportsCategory" />
       </EndProperty>
     </AssociationSetMapping>
-    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище Entities.sp_alterdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище Entities.sp_creatediagram" />
-    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище Entities.sp_dropdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище Entities.sp_helpdiagramdefinition">
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище BabDemNikModel.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище BabDemNikModel.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище BabDemNikModel.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище BabDemNikModel.sp_helpdiagramdefinition">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="Entities.sp_helpdiagramdefinition_Result">
+        <ComplexTypeMapping TypeName="BabDemNikModel.sp_helpdiagramdefinition_Result">
           <ScalarProperty Name="version" ColumnName="version" />
           <ScalarProperty Name="definition" ColumnName="definition" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище Entities.sp_helpdiagrams">
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище BabDemNikModel.sp_helpdiagrams">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="Entities.sp_helpdiagrams_Result">
+        <ComplexTypeMapping TypeName="BabDemNikModel.sp_helpdiagrams_Result">
           <ScalarProperty Name="Database" ColumnName="Database" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="ID" ColumnName="ID" />
@@ -185,7 +185,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище Entities.sp_renamediagram" />
-    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище Entities.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище BabDemNikModel.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище BabDemNikModel.sp_upgraddiagrams" />
   </EntityContainerMapping>
 </Mapping>
