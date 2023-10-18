@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PERUN.WinApp"
         mc:Ignorable="d"
-        Title="WinAddMillitary" Height="3999" Width="814"
+        Title="WinAddMillitary" Height="650" Width="814"
         ResizeMode="NoResize">
     <Grid>
         <Border Background="#3A5A40"
