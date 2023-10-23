@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PERUN.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PERUN.WinApp
@@ -48,6 +50,13 @@ namespace PERUN.WinApp
             WinAddMillitary winAddMillitary = new WinAddMillitary();
             winAddMillitary.InitializeComponent();
             winAddMillitary.Show();
+        }
+
+        private void Open_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationWindow win =  new NavigationWindow();
+            win.Content = new MainPage();
+            win.Show();
         }
     }
 }

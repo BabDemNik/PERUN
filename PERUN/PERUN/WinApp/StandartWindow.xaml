@@ -80,6 +80,17 @@
                 FontWeight="Bold"
                 Click="BTNAddMilitary_Click"/>
 
+        <Button x:Name="Open"
+                Grid.Column="7"
+                Grid.ColumnSpan="2"
+                Grid.Row="3"
+                Height="40"
+                Content="Open"
+                FontSize="28"
+                FontWeight="Bold" Click="Open_Click"
+                />
+
+
 
         <!--<Grid Grid.Column="4"
               Grid.Row="3"

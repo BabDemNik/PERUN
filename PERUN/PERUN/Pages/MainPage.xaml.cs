@@ -1,6 +1,8 @@
-﻿using System;
+﻿using PERUN.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PERUN.Page
+namespace PERUN.Pages
 {
     /// <summary>
     /// Логика взаимодействия для MainPage.xaml
@@ -22,7 +24,9 @@ namespace PERUN.Page
     {
         public MainPage()
         {
+            Entiti entities = new Entiti();
             InitializeComponent();
+            LvMilitary.ItemsSource = entities.Military.ToList();
         }
     }
 }
